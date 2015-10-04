@@ -29,6 +29,7 @@ var MyAppComponent = (function () {
             this.error = 'Please submit both a name and question.';
         }
         else {
+            this.error = '';
             this.data.push({
                 name: name.value,
                 question: question.value
@@ -46,7 +47,7 @@ var MyAppComponent = (function () {
             selector: 'my-app'
         }),
         angular2_1.View({
-            directives: [angular2_1.NgFor],
+            directives: [angular2_1.NgFor, angular2_1.NgIf],
             templateUrl: 'templates/component.html'
         }), 
         __metadata('design:paramtypes', [])

@@ -7,7 +7,7 @@ import {Component, View, bootstrap, NgFor, NgIf} from 'angular2/angular2';
 })
 
 @View({
-  directives: [NgFor],
+  directives: [NgFor, NgIf],
   templateUrl: 'templates/component.html'
   //template: '<h2 (click)="onClick()">Hello {{ name }}</h2><ul><li *for="#item of items">{{item.name}}</li></ul>'
 })
@@ -33,6 +33,8 @@ class MyAppComponent {
     }
 
     else {
+      this.error = '';
+      
       this.data.push({
         name: name.value,
         question: question.value

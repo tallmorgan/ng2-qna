@@ -4,10 +4,10 @@
 
 <h2>Students: Ask</h2>
 
-<div class="alert alert-danger" role="alert">
+<div class="alert alert-danger" role="alert" *ng-if="!!error">
   <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
   <span class="sr-only">Error:</span>
-  Enter a valid email address
+  {{error}}
 </div>
 
 <table class="table">
