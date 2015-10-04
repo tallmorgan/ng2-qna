@@ -19,7 +19,8 @@ var MyAppComponent = (function () {
         this.data = new Firebase('https://f6046te5hln.firebaseio-demo.com/');
         this.error = '';
         this.data.on('value', function (snapshot) {
-            _this.questions = snapshot.val();
+            var newQuestions = snapshot.val();
+            _this.questions = newQuestions ? newQuestions : {};
             _this.questionKeys = Object.keys(_this.questions);
         });
     }

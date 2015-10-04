@@ -21,7 +21,8 @@ class MyAppComponent {
 
   constructor() {
     this.data.on('value', (snapshot) => {
-      this.questions = snapshot.val();
+      var newQuestions = snapshot.val();
+      this.questions = newQuestions ? newQuestions : {};
       this.questionKeys = Object.keys(this.questions);
     });
   }
