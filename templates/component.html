@@ -1,0 +1,49 @@
+<div class="page-header">
+  <h1>Angular2 Q'n'A</h1>
+</div>
+
+<h2>Students: Ask</h2>
+
+<div class="alert alert-danger" role="alert" *ng-if="!!error">
+  <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+  <span class="sr-only">Error:</span>
+  {{error}}
+</div>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Question</th>
+      <th>Submit</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><input #qname class="form-control" /></td>
+      <td><input #qquestion class="form-control" /></td>
+      <td><button type="button" (click)="submitQuestion(qname, qquestion)" class="btn btn-primary">Ask</button></td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>Mentors: Respond</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Name</th>
+      <th>Question</th>
+      <th>Respond</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ng-for="#key of questionKeys #i=index">
+      <td>{{i+1}}</td>
+      <td>{{questions[key].name}}</td>
+      <td>{{questions[key].question}}</td>
+      <td><button type="button" (click)="respondToQuestion(key)" class="btn btn-success">Respond</button></td>
+    </tr>
+  </tbody>
+</table>
